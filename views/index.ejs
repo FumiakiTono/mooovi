@@ -1,11 +1,136 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="container">
+        <!-- navbar -->
+        <div class="row">
+            <nav class="navbar navbar-default navbar-fixed-top">
+
+                <div class="navbar-header">
+                    <a href="" class="navbar-brand">Mooovi</a>
+                </div>
+
+                <ul class="nav navbar-nav pull-right">
+                    <li class="active"><a href="">投稿する</a></li>
+                    <li><a href="">マイページ</a></li>
+                    <li><a href="">ログアウト</a></li>
+                </ul>
+
+            </nav>
+        </div>
+
+        <!-- content -->
+        <div class="row" style="padding:60px 0 0 0">
+            <!-- main -->
+            <div class="col-md-9">
+                <!-- apply custom style -->
+                <div class="page-header" style="margin-top:-30px;padding-bottom:0px;">
+                <h1><small>映画一覧</small></h1>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                      <div class="thumbnail" style="text-align:center;padding-top:10px;">
+                          <a href="">
+                              <img src="150x150.jpg">
+                          </a>
+                          <div class="caption">
+                              <p><b>タイトル</b></p>
+                              <p>レビュー</p>
+                              <p style="margin-bottom:0px"><a href="" class="btn btn-primary">レビュー投稿する</a></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="thumbnail" style="text-align:center;padding-top:10px;">
+                          <a href="">
+                              <img src="150x150.jpg">
+                          </a>
+                          <div class="caption">
+                              <p><b>タイトル</b></p>
+                              <p>レビュー</p>
+                              <p style="margin-bottom:0px"><a href="" class="btn btn-primary">レビューを投稿する</a></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="thumbnail" style="text-align:center;padding-top:10px;">
+                          <a href="">
+                              <img src="150x150.jpg">
+                          </a>
+                          <div class="caption">
+                              <p><b>タイトル</b></p>
+                              <p>レビュー</p>
+                              <p style="margin-bottom:0px"><a href="" class="btn btn-primary">レビューを投稿する</a></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="thumbnail" style="text-align:center;padding-top:10px;">
+                          <a href="">
+                              <img src="150x150.jpg">
+                          </a>
+                          <div class="caption">
+                              <p><b>タイトル</b></p>
+                              <p>レビュー</p>
+                              <p style="margin-bottom:0px"><a href="" class="btn btn-primary">レビューを投稿する</a></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="thumbnail" style="text-align:center;padding-top:10px;">
+                          <a href="">
+                              <img src="150x150.jpg">
+                          </a>
+                          <div class="caption">
+                              <p><b>タイトル</b></p>
+                              <p>レビュー</p>
+                              <p style="margin-bottom:0px"><a href="" class="btn btn-primary">レビューを投稿する</a></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="thumbnail" style="text-align:center;padding-top:10px;">
+                          <a href="">
+                              <img src="150x150.jpg">
+                          </a>
+                          <div class="caption">
+                              <p><b>タイトル</b></p>
+                              <p>レビュー</p>
+                              <p style="margin-bottom:0px"><a href="" class="btn btn-primary">レビューを投稿する</a></p>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <!-- right -->
+            <div class="col-md-3">
+                <!-- パネルで囲む -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        ランキング
+                    </div>
+                    <!-- <div class="panel-body"> -->
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href=""><i class="glyphicon glyphicon-pencil"></i>1位の映画</a></li>
+                        <li><a href=""><i class="glyphicon glyphicon-download"></i>2位の映画</a></li>
+                        <li><a href=""><i class="glyphicon glyphicon-leaf"></i>3位の映画</a></li>
+                        <li><a href=""><i class="glyphicon glyphicon-folder-open"></i>4位の映画</a></li>
+                    </ul>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div id="footer">copy right....</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
 </html>

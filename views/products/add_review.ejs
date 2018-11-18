@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+        <!-- navbar -->
+        <div class="row">
+            <nav class="navbar navbar-default navbar-fixed-top">
+
+                <div class="navbar-header">
+                    <a href="" class="navbar-brand">Mooovi</a>
+                </div>
+
+                <ul class="nav navbar-nav pull-right">
+                    <li class="active"><a href="">投稿する</a></li>
+                    <li><a href="">マイページ</a></li>
+                    <li><a href="">ログアウト</a></li>
+                </ul>
+
+            </nav>
+        </div>
+
+        <!-- content -->
+        <div class="row" style="padding:60px 0 0 0">
+            <!-- main -->
+            <div class="col-md-9">
+              <!-- apply custom style -->
+              <div class="page-header" style="margin-top:-30px;padding-bottom:0px;">
+              <h1><small>投稿</small></h1>
+              </div>
+
+              <form method="post" action"">
+
+                  <!-- name -->
+                  <div class="form-group">
+                      <label>映画タイトル</label>
+                      <input type="text" name="name" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                      <label>評価</label>
+                      <select name="area" class="form-control">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                      </select>
+                  </div>
+
+                  <!-- comment -->
+                  <div class="form-group">
+                      <label>レビュー投稿</label>
+                      <textarea class="form-control" rows=3 placeholder="100文字までです。"></textarea>
+                  </div>
+
+                  <!-- submit -->
+                  <button type="submit" class="btn btn-primary center-block">投稿する</button>
+
+              </form>
+            </div>
+            <!-- right -->
+            <div class="col-md-3">
+                <!-- パネルで囲む -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        ランキング
+                    </div>
+                    <!-- <div class="panel-body"> -->
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href=""><i class="glyphicon glyphicon-pencil"></i>1位の映画</a></li>
+                        <li><a href=""><i class="glyphicon glyphicon-download"></i>2位の映画</a></li>
+                        <li><a href=""><i class="glyphicon glyphicon-leaf"></i>3位の映画</a></li>
+                        <li><a href=""><i class="glyphicon glyphicon-folder-open"></i>4位の映画</a></li>
+                    </ul>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div id="footer">copy right....</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>

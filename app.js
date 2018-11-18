@@ -10,8 +10,7 @@ var logger = require('morgan');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var home = require('./routes/home');
-var add_review = require('./routes/add_review');
-var product = require('./routes/product');
+var products = require('./routes/products');
 
 
 var app = express();
@@ -39,8 +38,7 @@ app.use(session(session_opt));
 app.use('/', index);
 app.use('/home', home);
 app.use('/users', users);
-app.use('/add_review', add_review);
-app.use('/product', product);
+app.use('/products', products);
 
 
 // catch 404 and forward to error handler
