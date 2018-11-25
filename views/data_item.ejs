@@ -1,0 +1,14 @@
+<% if (val != null) { %>
+  <div class="col-md-3">
+      <div class="thumbnail" style="text-align:center;padding-top:10px;">
+          <a href="">
+              <img src="150x150.jpg">
+          </a>
+          <div class="caption">
+              <p><b><%- val.attributes.title %></b></p>
+              <p><%- val.attributes.detail %></p>
+              <p style="margin-bottom:0px"><a href="" class="btn btn-primary">レビュー投稿する</a></p>
+          </div>
+      </div>
+  </div>
+<% } %>

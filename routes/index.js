@@ -9,7 +9,7 @@ var knex = require('knex')({
     host     :'localhost',
     user     :'root',
     password :'',
-    database :'mooovi',
+    database :'mooovi_express',
     charset  :'utf8'
   }
 });
@@ -20,11 +20,33 @@ var User = Bookshelf.Model.extend({
   tableName: 'users'
 });
 
+var Product = Bookshelf.Model.extend({
+  tableName: 'products'
+});
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  if (req.session.login==null){
-    res.render('index', { title: 'トップページ' });
-  }
+
+  new Product().fetchAll().then((collection) => {
+    var data = {
+      title: "トップページ",
+      content: "",
+      // login: req.session.login,
+      collection: collection.toArray()
+    };
+    // console.log(data.collection.attributes.title);
+    res.render("index", data);
+  }).catch((err) => {
+    res.render(500).json({error: true, data: {message: err.message}});
+  });
+
+  // if (req.session.login==null){
+  //   var data = {
+  //     title: "トップページ",
+  //     content: ""
+  //   }
+  //   res.render('index', data);
+  // }
 });
 
 module.exports = router;
