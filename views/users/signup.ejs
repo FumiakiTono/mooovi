@@ -15,18 +15,19 @@
   <div class="container col-md-4">
       <h2 class="text-center">mooovi</h2>
       <p class="text-center">新規登録</p>
-      <form>
+      <p><%- content %></p>
+      <form method="post" action="/users/add">
           <div class="form-group has-success">
               <label>Email</label>
-              <input type="text" name="email" class="form-control">
+              <input type="text" name="email" class="form-control" value="<%= form.email %>">
           </div>
           <div class="form-group has-error">
               <label>Password</label>
-              <input type="text" name="password" class="form-control">
+              <input type="text" name="password" class="form-control" value="<%= form.password %>">
           </div>
           <div class="form-group">
               <label>Nickname</label>
-              <input type="text" name="nickname" class="form-control">
+              <input type="text" name="nickname" class="form-control" value="<%= form.nickname %>">
           </div>
           <label>
             <span class="btn btn-primary">

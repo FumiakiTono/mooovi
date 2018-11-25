@@ -15,7 +15,8 @@
   <div class="container col-md-4">
       <h2 class="text-center">mooovi</h2>
       <p class="text-center">ログイン</p>
-      <form>
+      <p><%- content %></p>
+      <form method="post" action="/users/signin">
           <div class="form-group has-success">
               <label>Email</label>
               <input type="text" name="email" class="form-control">
