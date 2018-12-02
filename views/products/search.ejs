@@ -34,16 +34,17 @@
               <h1><small>投稿する作品を検索</small></h1>
               </div>
 
-              <form method="get" action"">
+              <form method="post" action="search">
                 <div class="form-group">
-                    <input type="text" name="search" class="form-control">
+                    <input type="text" name="title" class="form-control">
                 </div>
               </form>
 
               <div class="page-header">
               <h1><small>検索結果</small></h1>
+              <%#- content %>
               </div>
-
+              <% if (collection != "") { %>
               <div class="row">
                 <div class="col-md-12">
                     <div class="thumbnail" style="text-align:center;padding-top:10px;">
@@ -51,50 +52,13 @@
                             <img src="150x150.jpg">
                         </a>
                         <div class="caption">
-                            <p><b>タイトル</b></p>
-                            <p>レビュー</p>
-                            <p style="margin-bottom:0px"><a href="" class="btn btn-primary">レビューを投稿する</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="thumbnail" style="text-align:center;padding-top:10px;">
-                        <a href="">
-                            <img src="150x150.jpg">
-                        </a>
-                        <div class="caption">
-                            <p><b>タイトル</b></p>
-                            <p>レビュー</p>
-                            <p style="margin-bottom:0px"><a href="" class="btn btn-primary">レビューを投稿する</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="thumbnail" style="text-align:center;padding-top:10px;">
-                        <a href="">
-                            <img src="150x150.jpg">
-                        </a>
-                        <div class="caption">
-                            <p><b>タイトル</b></p>
-                            <p>レビュー</p>
-                            <p style="margin-bottom:0px"><a href="" class="btn btn-primary">レビューを投稿する</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="thumbnail" style="text-align:center;padding-top:10px;">
-                        <a href="">
-                            <img src="150x150.jpg">
-                        </a>
-                        <div class="caption">
-                            <p><b>タイトル</b></p>
-                            <p>レビュー</p>
+                            <p><b><%- collection.attributes.title %></b></p>
                             <p style="margin-bottom:0px"><a href="" class="btn btn-primary">レビューを投稿する</a></p>
                         </div>
                     </div>
                 </div>
               </div>
-
+              <% } %>
             </div>
             <!-- right -->
             <div class="col-md-3">

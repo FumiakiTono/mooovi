@@ -34,17 +34,18 @@
               <h1><small>投稿</small></h1>
               </div>
 
-              <form method="post" action"">
+              <form method="post" action="/products/add_review">
 
                   <!-- name -->
                   <div class="form-group">
-                      <label>映画タイトル</label>
-                      <input type="text" name="name" class="form-control">
+                      <label>映画タイトルid1</label>
+                      <!-- hidden以外のやり方がありそう -->
+                      <input type="hidden" name="id" value="<%= id %>">
                   </div>
 
                   <div class="form-group">
                       <label>評価</label>
-                      <select name="area" class="form-control">
+                      <select name="rate" class="form-control">
                           <option value="1">1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -61,7 +62,7 @@
                   <!-- comment -->
                   <div class="form-group">
                       <label>レビュー投稿</label>
-                      <textarea class="form-control" rows=3 placeholder="100文字までです。"></textarea>
+                      <textarea class="form-control" name=review  rows=3 placeholder="100文字までです。"></textarea>
                   </div>
 
                   <!-- submit -->

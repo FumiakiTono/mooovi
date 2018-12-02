@@ -29,7 +29,19 @@
         <div class="row" style="padding:60px 0 0 0">
             <!-- main -->
             <div class="col-md-9">
-
+              <div class="page-header" style="margin-top:-30px;padding-bottom:0px;">
+              <h1><small>
+                <%= collection[0].relations.product.attributes.title %>
+              </small></h1>
+              </div>
+              <div class="page-header">
+              <h1><small>みんなのレビュー</small></h1>
+              </div>
+              <% for(var i in collection) { %>
+                <% var obj = collection[i].attributes; %>
+                <%= obj.review %>
+                <br>
+              <% } %>
             </div>
             <!-- right -->
             <div class="col-md-3">
