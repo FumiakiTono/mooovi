@@ -7,6 +7,7 @@ var session = require('express-session');
 var validator = require('express-validator');
 var logger = require('morgan');
 
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var home = require('./routes/home');
@@ -25,6 +26,21 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(validator());
+
+
+var jquery = require('express-jquery');
+app.use(jquery('/jquery'));
+
+var ajax = require('./routes/ajax');
+app.use('/ajax', ajax);
+
+// CORSを許可する
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 var session_opt = {
   secret: 'keyboard cat',

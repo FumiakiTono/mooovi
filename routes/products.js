@@ -67,18 +67,18 @@ router.get('/search', (req, res, next) => {
   res.render('products/search', data);
 });
 
-router.post('/search', (req, res, next) => {
-  new Product().where('title', 'like', '%' + req.body.title + '%').fetch().
-      then((collection) => {
-        console.log(collection);
-        var data = {
-          title: "映画を検索する",
-          collection: collection
-        };
-        console.log(data);
-        res.render("products/search", data);
-      })
-});
+// router.post('/search', (req, res, next) => {
+//   new Product().where('title', 'like', '%' + req.body.title + '%').fetch().
+//       then((collection) => {
+//         console.log(collection);
+//         var data = {
+//           title: "映画を検索する",
+//           collection: collection
+//         };
+//         console.log(data);
+//         res.render("products/search", data);
+//       })
+// });
 
 router.get('/:id', (req, res, next) => {
   new Review().where('product_id', '=', req.params.id).fetchAll({withRelated: ['product']}).

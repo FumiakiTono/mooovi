@@ -5,25 +5,35 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/jquery"></script>
+    <!-- <script src="/javascripts/jquery.min.js"></script> -->
   </head>
+  <script>
+      // console.log(2);
+      $(document).ready(function(){
+        $(".post").hover(function(){
+          $(".post").css("background-color", "green");
+        }, function() {
+            $(".post").css("background-color", "");
+        });
+
+        $(".mypage").hover(function(){
+          $(".mypage").css("background-color", "red");
+        }, function() {
+            $(".mypage").css("background-color", "");
+        });
+
+        $(".signout").hover(function(){
+          $(".signout").css("background-color", "blue");
+        }, function() {
+            $(".signout").css("background-color", "");
+        });
+      });
+  </script>
   <body>
     <div class="container">
         <!-- navbar -->
-        <div class="row">
-            <nav class="navbar navbar-default navbar-fixed-top">
-
-                <div class="navbar-header">
-                    <a href="" class="navbar-brand">Mooovi</a>
-                </div>
-
-                <ul class="nav navbar-nav pull-right">
-                    <li class="active"><a href="">投稿する</a></li>
-                    <li><a href="">マイページ</a></li>
-                    <li><a href="/users/signout">ログアウト</a></li>
-                </ul>
-
-            </nav>
-        </div>
+        <%- include("header") %>
 
         <!-- content -->
         <div class="row" style="padding:60px 0 0 0">
