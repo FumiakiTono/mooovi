@@ -28,15 +28,31 @@ var Product = Bookshelf.Model.extend({
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log("1");
   new Product().fetchAll().then((collection) => {
-    // console.log(collection);
     var data = {
       title: "トップページ",
       content: "",
       login: req.session.login,
       collection: collection.toArray()
     };
+
+    // dataはオブジェクト型のオブジェクトなので参照渡し
+    console.log(data);
+    data2 = data;
+    data2["title"] = "toppage";
+    console.log(data);
+    console.log(data2);
+
+    // funcはオブジェクト型の関数なので参照渡し
+    var func = function(){
+    };
+    func.hoge = 0
+    console.log(func.hoge);
+    func2 = func;
+    func2.hoge = 1
+    console.log(func.hoge)
+    console.log(func2.hoge);
+
     res.render("index", data);
   }).catch((err) => {
     res.render(500).json({error: true, data: {message: err.message}});

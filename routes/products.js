@@ -46,6 +46,9 @@ router.get('/:id/add_review', (req, res, next) => {
 
 router.post("/add_review", (req, res, next) => {
   console.log(req.session.login);
+  // エスケープ処理、レビュー内容にHTMLのタグやJSのスクリプトがないかチェック、
+  req.sanitize("review").escape();
+
   var record = {
     product_id: req.body.id,
     rate: req.body.rate,

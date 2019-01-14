@@ -42,8 +42,17 @@ router.post('/add', (req, res, next) => {
   req.check('password', "PASSWORDは必ず入力して下さい。").notEmpty();
   req.getValidationResult().then((result) => {
     if(!result.isEmpty()){
+
+      // 文字列型はプリミティブ型なので値渡し
       var content = '<ul class="error">';
+      // var content2 = content;
+      // content2 = 'hoge'
+      // console.log(content);
+      // console.log(content2);
+
       var result_arr = result.array();
+      console.log(result_arr);
+
       for(var n in result_arr){
         content += '<li>' + result_arr[n].msg + '</li>'
       }
@@ -83,6 +92,15 @@ router.post('/signin', (req, res, next) => {
     if (!result.isEmpty()) {
       var content = '<ul class="error">';
       var result_arr = result.array();
+
+      // バリデーションエラーにひっかかったとき
+      // result_arrはオブジェクト型の配列なので参照渡し
+      // console.log(result_arr);
+      // result_arr2 = result_arr
+      // result_arr[0] = "hogehoge"
+      // console.log(result_arr);
+      // console.log(result_arr2);
+
       for(var n in result_arr){
         content += '<li>' + result_arr[n].msg + '</li>'
       }
@@ -112,7 +130,8 @@ router.post('/signin', (req, res, next) => {
                 var data = {
                   title: 'Login',
                   content: '<p>ログインしました！</p>',
-                  form: req.body
+                  form: req.body,
+                  collection: ""
                 };
                 response.render('index', data);
               }
