@@ -1,29 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-var mysql = require('mysql');
 
-var knex = require('knex')({
-  dialect: 'mysql',
-  connection: {
-    host     :'localhost',
-    user     :'root',
-    password :'',
-    database :'mooovi_express',
-    charset  :'utf8'
-  }
-});
-
-var Bookshelf = require('bookshelf')(knex);
-
-var Product = Bookshelf.Model.extend({
-  tableName: 'products'
-});
-
+var product = require('../model/product');
+var review = require('../model/review');
+var user = require('../model/user');
 
 router.get('/', (req, res, next) => {
   console.log(collection);
-  new Product().where('title', 'like', '%' + req.query.title + '%').fetch()
+  new product().where('title', 'like', '%' + req.query.title + '%').fetch()
     .then((collection) => {
       console.log(collection);
       var data = {
