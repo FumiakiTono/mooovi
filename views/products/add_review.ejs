@@ -5,7 +5,16 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/jquery"></script>
   </head>
+  <script>
+    $(function(){
+      $(".review-submit").click(function(){
+        var target = $(".add_review").val();
+        console.log(target);
+      });
+    });
+  </script>
   <body>
     <div class="container">
         <!-- navbar -->
@@ -48,11 +57,11 @@
                   <!-- comment -->
                   <div class="form-group">
                       <label>レビュー投稿</label>
-                      <textarea class="form-control" name=review  rows=3 placeholder="100文字までです。"></textarea>
+                      <textarea class="form-control add_review" name=review  rows=3 placeholder="100文字までです。"></textarea>
                   </div>
 
                   <!-- submit -->
-                  <button type="submit" class="btn btn-primary center-block">投稿する</button>
+                  <button type="submit" class="btn btn-primary center-block review-submit">投稿する</button>
 
               </form>
             </div>
@@ -78,7 +87,7 @@
     <!-- footer -->
     <div id="footer">copy right....</div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </body>
 </html>
