@@ -8,6 +8,7 @@ function product_controller(){};
 product_controller.new = (req, res, next) => {
   product = new Product();
   data = product.new_data(req);
+  // console.log(data);
   res.render('products/add_review', data);
 }
 
@@ -48,7 +49,6 @@ product_controller.show = (req, res, next) => {
     then((collection) => {
       product = new Product();
       data = product.show_data(collection);
-      // console.log(collection[0].relations.user)
       res.render('products/show', data);
     })
 }

@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <script src="/jquery"></script> -->
-    <script src="/javascripts/jquery.min.js"></script>
-  </head>
-
+  <%- include("../common/head") %>
   <!-- jQueryでのajax通信 -->
   <!-- <script>
     $(document).ready(function(){
@@ -55,32 +47,32 @@
   <body>
     <div class="container">
         <!-- navbar -->
-        <%- include("../header") %>
+        <%- include("../common/header") %>
 
         <!-- content -->
-        <div class="row" style="padding:60px 0 0 0">
+        <div class="row row-style">
             <!-- main -->
-            <div class="col-md-9">
+            <div class="col-xs-9">
               <!-- apply custom style -->
-              <div class="page-header" style="margin-top:-30px;padding-bottom:0px;">
+              <div class="page-header" id="page-header-style">
               <h1><small>投稿する作品を検索</small></h1>
               </div>
 
               <form method="post" action="search">
                 <div class="form-group">
-                    <input type="text" name="title" id="search" class="form-control">
-                    <button type="submit" id="btn"  class="btn btn-primary center-block">投稿する</button>
+                    <input type="text" name="title" id="search" class="form-control search-form">
+                    <button type="submit" id="btn"  class="btn btn-primary center-block search-submit">検索する</button>
                 </div>
               </form>
 
-              <div class="page-header">
-              <h1><small>検索結果</small></h1>
-              <%#- content %>
+              <div class="page-header search-result">
+                <h1 id="search-result"><small>検索結果</small></h1>
+                <%#- content %>
               </div>
               <div id="movie">
                 <% if (collection != "") { %>
                 <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-xs-12">
                       <div class="thumbnail" style="text-align:center;padding-top:10px;">
                           <a href="">
                               <img src="150x150.jpg">
@@ -95,27 +87,11 @@
                 <% } %>
               </div>
             </div>
-            <!-- right -->
-            <div class="col-md-3">
-                <!-- パネルで囲む -->
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        ランキング
-                    </div>
-                    <!-- <div class="panel-body"> -->
-                    <ul class="nav nav-pills nav-stacked">
-                        <li><a href=""><i class="glyphicon glyphicon-pencil"></i>1位の映画</a></li>
-                        <li><a href=""><i class="glyphicon glyphicon-download"></i>2位の映画</a></li>
-                        <li><a href=""><i class="glyphicon glyphicon-leaf"></i>3位の映画</a></li>
-                        <li><a href=""><i class="glyphicon glyphicon-folder-open"></i>4位の映画</a></li>
-                    </ul>
-                    <!-- </div> -->
-                </div>
-            </div>
+            <%- include("../common/side") %>
         </div>
     </div>
     <!-- footer -->
-    <div id="footer">copy right...</div>
+    <%- include("../common/footer") %>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

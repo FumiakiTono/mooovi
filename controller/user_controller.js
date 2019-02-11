@@ -16,7 +16,7 @@ user_controller.add = (req, res, next) => {
   var response = res;
   user = new User();
   // バリデーション
-  req.check('email', "emailは必ず入力して下さい。").notEmpty();
+  req.check('email', "emailは必ず入力してください。").notEmpty();
   req.check('password', "PASSWORDは必ず入力して下さい。").notEmpty();
   req.getValidationResult().then((result) => {
     if(!result.isEmpty()){
