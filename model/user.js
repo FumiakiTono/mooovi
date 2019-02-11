@@ -11,7 +11,8 @@ var User = Bookshelf.Model.extend({
       title: "新規登録",
       form: {email: '', password: '', nickname: ''},
       content: ""
-    }
+    };
+    return data;
   },
 
   make_content: function(result_arr){
@@ -87,7 +88,7 @@ var User = Bookshelf.Model.extend({
     return data;
   },
 
-  show_data: function(){
+  show_data: function(req){
     var data = {
       title: "マイページ"
     }
